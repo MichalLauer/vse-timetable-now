@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "VŠE timetable now",
+  "version": "1.0",
+  "description": "This extension automatically hides events from the InSIS timetable which are past due.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "webNavigation",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://insis.vse.cz/auth/katalog/rozvrhy_view.pl*"
+  ],
+  "action": {
+    "default_popup": "html/popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["https://insis.vse.cz/auth/katalog/rozvrhy_view.pl*"],
+    "js": ["js/content.js"]
+  }],
+  "icons": {
+    "16": "images/logo16.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
+  }
+}
