@@ -4,6 +4,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   }
 });
 
+chrome.storage.local.get(['start_with'], function (result) {
+  const loaded = result.start_with || false;
+  update_tt(!loaded);
+});
+
 function update_tt(show_all) {
   // Scrape table "Poznámky"
   nds = document.querySelectorAll("#str1 table td:not([colspan]).odsazena")

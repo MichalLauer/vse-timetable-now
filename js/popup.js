@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get(['start_with'], function (result) {
     const loaded = result.start_with || false;
     cb_start.checked = loaded;
-    call_func(!loaded)
   });
 
   // Add an event listener for the checkbox change event
