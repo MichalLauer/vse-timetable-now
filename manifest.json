@@ -5,8 +5,6 @@
   "description": "This extension automatically hides events from the InSIS timetable which are past due.",
   "permissions": [
     "activeTab",
-    "scripting",
-    "webNavigation",
     "storage"
   ],
   "host_permissions": [
