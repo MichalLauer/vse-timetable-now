@@ -11,7 +11,7 @@ chrome.storage.local.get(['start_with'], function (result) {
 
 function update_tt(show_all) {
   // Scrape table "Poznámky"
-  nds = document.querySelectorAll("#str1 table td:not([colspan]).odsazena")
+  let nds = document.querySelectorAll("#str1 table td:not([colspan]).odsazena")
   // Split numbers and content
   const numbers = [];
   let content = [];
@@ -37,7 +37,7 @@ function update_tt(show_all) {
       value.forEach((date, index, arr) => {
         arr[index] = date.replace(regex_capture, "$3-$2-$1")
       })
-      scheduleVisible[key] = value.every((date) => {
+      scheduleVisible[key] = value.some((date) => {
         return new Date(date) >= today.setHours(0, 0, 0, 0)
       })
     }
